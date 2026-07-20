@@ -20,14 +20,20 @@ bool isposs(vector<int>& weights,int w,int days)
 
 }
     int shipWithinDays(vector<int>& weights, int days) {
+
+       
        int l=*max_element(weights.begin(),weights.end());
        int r=accumulate(weights.begin(),weights.end(),0);
        int ans=0;
+
+    //    for(int i=l;i<=r;i++) cout<<i<<"->"<<isposs(weights,i,days)<<endl;
+    //    cout<<endl;
+
        while(l<=r)
        {
         int mid=l+(r-l)/2;
         bool t=isposs(weights,mid,days);
-        cout<<t<<endl;
+       // cout<<mid<<"->"<<t<<endl;
         if(t)
         {
             ans=mid;
