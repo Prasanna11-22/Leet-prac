@@ -28,6 +28,9 @@ public:
             }
         }
     }
-    return (s1+s2-2*(dp[s1][s2]));
+
+    int r1=s1-dp[s1][s2];
+    int r2=s2-dp[s1][s2];
+    return (r1+r2);
     }
 };
