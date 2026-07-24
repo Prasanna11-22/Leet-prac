@@ -6,17 +6,13 @@ public:
         while(l<r)
         {
             int mid=l+(r-l)/2;
-            if(arr[mid]<=arr[r])
-            {
-                r=mid;
-            }
-            else if(arr[l]<=arr[mid])
+            if(arr[mid]>arr[r])
             {
                 l=mid+1;
             }
             else
             {
-                return arr[l];
+               r=mid;
             }
         }
         return arr[l];
