@@ -1,27 +1,25 @@
 class Solution {
 public:
-
-bool isposs(vector<int>& piles,int h,int k)
+bool isposs(int ban,vector<int>& piles,int h)
 {
-    long long eathr=0;
+    long long sum=0;
+
     for(int i : piles)
     {
-        eathr+=ceil((double)i/k);
+        sum+=(i+ban-1)/ban;
     }
-   return eathr<=h;
+
+    return sum<=h;
 }
     int minEatingSpeed(vector<int>& piles, int h) {
-        int l=1,ans=0;
+        int l=1;
         int r=*max_element(piles.begin(),piles.end());
-        // for(int i=l;i<=r;i++)
-        // {
-        //     cout<<i<<"->"<<isposs(piles,h,i)<<endl;
-        // }
+        int ans=r;
 
         while(l<=r)
         {
             int mid=l+(r-l)/2;
-            if(isposs(piles,h,mid))
+            if(isposs(mid,piles,h))
             {
                 ans=mid;
                 r=mid-1;
