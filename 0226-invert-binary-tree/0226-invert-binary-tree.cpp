@@ -15,13 +15,12 @@ public:
 TreeNode* rec(TreeNode* root)
 {
     if(root==NULL) return nullptr;
-    else
-    {
-        swap(root->left,root->right);
-    }
-
     rec(root->left);
     rec(root->right);
+    swap(root->left,root->right);
+    
+
+   
 
     return root;
 }
