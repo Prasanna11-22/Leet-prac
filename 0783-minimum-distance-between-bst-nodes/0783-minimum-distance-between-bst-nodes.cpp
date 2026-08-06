@@ -13,11 +13,11 @@ class Solution {
 public:
 int mindiff=1e9;
 bool flag=0;
-void rec(TreeNode* root,int &prev,int &mindiff)
+void inod(TreeNode* root,int &prev,int &mindiff)
 {
     if(!root) return;
 
-    rec(root->left,prev,mindiff);
+    inod(root->left,prev,mindiff);
     if(flag==0)
     {
         prev=root->val;
@@ -32,14 +32,14 @@ void rec(TreeNode* root,int &prev,int &mindiff)
     }
     prev=root->val;
     }
-    rec(root->right,prev,mindiff);
+    inod(root->right,prev,mindiff);
 
 }
 
     int minDiffInBST(TreeNode* root) {
         int prev=1e9;
-    rec(root,prev,mindiff);
-return mindiff;
+    inod(root,prev,mindiff);
+     return mindiff;
 }
 
 };
