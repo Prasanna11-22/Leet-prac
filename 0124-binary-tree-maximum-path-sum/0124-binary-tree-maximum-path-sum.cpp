@@ -18,23 +18,10 @@ int postord(TreeNode* root)
 
     int left=postord(root->left);
     int right=postord(root->right);
-    cout<<root->val<<"->"<<" "<<left<<" "<<right<<" "<<ans<<endl;
+    
     int l=max(0,left),r=max(0,right);
 
-
-    // if((root->left)&&root->val+root->left->val+left >=left)
-    // {
-    //     l=root->left->val+left; 
-    // }
-
-    // if((root->right)&&root->val+right>=right)
-    // {
-    //     r=root->right->val+right; 
-    // }
-
     ans=max(ans,l+root->val+r);
-
-    cout<<root->val<<" "<<l<<" "<<r<<" "<<ans<<endl;
     return max(l,r)+root->val;
 }
 
