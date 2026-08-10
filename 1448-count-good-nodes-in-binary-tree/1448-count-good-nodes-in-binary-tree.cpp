@@ -1,14 +1,13 @@
 class Solution {
 public:
-vector<int> res;
+int count=0;
 void preord(TreeNode* root,int maxval)
 {
     if(!root) return;
 
     if(root->val>=maxval)
     {
-        res.push_back(root->val);
-       // cout<<maxval<<" "<<root->val<<endl;
+        count++;
         maxval=root->val; 
     }
     preord(root->left,maxval);
@@ -19,6 +18,6 @@ void preord(TreeNode* root,int maxval)
     int goodNodes(TreeNode* root) {
         preord(root,-1e5);
 
-        return res.size();
+        return count;
     }
 };
