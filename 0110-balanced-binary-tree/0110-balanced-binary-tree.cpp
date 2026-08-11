@@ -11,30 +11,23 @@
  */
 class Solution {
 public:
-
-int chkheight(TreeNode* root)
+int postord(TreeNode* root)
 {
-    if(root==nullptr) return 0;
+    if(!root) return 0;
 
+    int l=postord(root->left);
+    if(l==-1) return -1;
+    int r=postord(root->right);
+    if(r==-1) return -1;
 
-    int left=chkheight(root->left);
-    if(left==-1) return -1;
+    if(abs(l-r)>1) return -1;
 
-    int right=chkheight(root->right);
-    if(right==-1) return -1;
-
-    if(abs(left-right)>1) return -1;
-
-    return max(left,right)+1;
+    return 1+max(l,r);
 }
 
-bool isBalanced(TreeNode* root) 
-{       
-    return (chkheight(root)!=-1);
-}
-
+    bool isBalanced(TreeNode* root) {
+        int h=postord(root);
+       
+        return (h!=-1)?true:false;
+    }
 };
-
-// Synced seamlessly with LeetHub Pro
-// Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
-// Get it here: https://chromewebstore.google.com/detail/bcilpkkbokcopmabingnndookdogmbna
