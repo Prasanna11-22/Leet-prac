@@ -9,7 +9,6 @@ public:
         {
             int mini=min(h[i],h[j]);
             maxi=max((j-i)*(min(h[i],h[j])),maxi);
-            cout<<h[i]<<" "<<h[j]<<" "<<maxi<<endl;
             if(mini==h[i])
             {
                 i++;
