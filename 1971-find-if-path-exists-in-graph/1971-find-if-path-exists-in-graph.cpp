@@ -30,8 +30,6 @@ bool validPath(int n, vector<vector<int>>& edges, int src, int dest) {
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
-
-    
     return dfs(src,dest);
     }
 };
