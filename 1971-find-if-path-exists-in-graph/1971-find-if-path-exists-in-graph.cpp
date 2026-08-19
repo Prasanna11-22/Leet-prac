@@ -2,16 +2,22 @@ class Solution {
 public:
 vector<vector<int>> adj;
 vector<int> vis;
-void dfs(int node)
+bool dfs(int node,int dest)
 {
+    if(node==dest) return true;
     vis[node]=1;
     for(auto nei : adj[node])
     {
         if(!vis[nei])
         {
-            dfs(nei);
+            if(dfs(nei,dest))
+            {
+                return true;
+            }
         }
     }
+
+    return false;
 }
 
 bool validPath(int n, vector<vector<int>>& edges, int src, int dest) {
@@ -25,7 +31,7 @@ bool validPath(int n, vector<vector<int>>& edges, int src, int dest) {
         adj[v].push_back(u);
     }
 
-    dfs(src);
-    return (vis[dest]==1);
+    
+    return dfs(src,dest);
     }
 };
