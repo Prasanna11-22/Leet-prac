@@ -1,35 +1,33 @@
 class Solution {
 public:
-vector<vector<int>> adj;
-vector<int> vis;
-bool dfs(int node,int dest)
-{
-    if(node==dest) return true;
-    vis[node]=1;
-    for(auto nei : adj[node])
-    {
-        if(!vis[nei])
-        {
-            if(dfs(nei,dest))
-            {
-                return true;
+    bool validPath(int n, vector<vector<int>>& edges, int source, int destination) {
+        if(source == destination)return true;
+        vector<vector<int>>adj(n);
+        for(auto edge : edges){
+            int u = edge[0];
+            int v = edge[1];
+
+            adj[u].push_back(v);
+            adj[v].push_back(u);
+        }
+
+        vector<int>visited(n,0);
+        queue<int>q;
+        q.push(source);
+        visited[source] = 1;
+        
+        while(!q.empty()){
+            int node = q.front();
+            q.pop();
+            if(node == destination)return true;
+
+            for(auto it : adj[node]){
+                if(!visited[it]){
+                    visited[it] = 1;
+                    q.push(it);
+                }
             }
         }
-    }
-
-    return false;
-}
-
-bool validPath(int n, vector<vector<int>>& edges, int src, int dest) {
-    adj.resize(n+1);
-    vis.resize(n+1,0);
-
-    for(auto k : edges)
-    {
-        int u=k[0],v=k[1];
-        adj[u].push_back(v);
-        adj[v].push_back(u);
-    }
-    return dfs(src,dest);
+        return false;
     }
 };
