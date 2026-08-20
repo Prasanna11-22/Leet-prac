@@ -6,7 +6,7 @@ int r,c,chk;
 
 void dfs(int i,int j,int col,vector<vector<int>>& img)
 {
-   
+    if(i<0 || i>=img.size() || j<0 || j>=img[0].size()) return;
     if(!vis[i][j]&&img[i][j]==chk)
     {
         res[i][j]=col;
