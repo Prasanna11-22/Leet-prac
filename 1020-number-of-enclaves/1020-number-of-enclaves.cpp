@@ -57,11 +57,10 @@ void dfs(int i,int j,vector<vector<int>>& grid,int rep)
             {
                 if(grid[i][j]==1)
                 {
-                   // cout<<grid[i][j]<<" ";
+                   
                     cnt++;
                 }
             }
-            //cout<<endl;
         }
         return cnt;
     }
