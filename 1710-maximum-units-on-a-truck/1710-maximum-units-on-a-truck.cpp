@@ -10,12 +10,11 @@ static bool cmp(vector<int>&a,vector<int>&b)
 
         for(auto k : boxes)
         {
-            if(truckSize>=0)
-            {
             int maxi=min(truckSize,k[0]);
             ans+=(k[1]*maxi);
             truckSize-=k[0];
-            }
+            
+            if(truckSize<=0) break;
         }
 
         return ans;
