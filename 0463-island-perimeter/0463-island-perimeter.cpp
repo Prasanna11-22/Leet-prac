@@ -13,7 +13,7 @@ int dfs(int i,int j,vector<vector<int>>& grid)
     if(grid[i][j]==1&&vis[i][j]) return 0;
     else if(grid[i][j]==0)
     {
-    if(grid[i][j]==0&&!vis[i][j])
+    if(!vis[i][j])
     {
         vis[i][j]=1;
     }
@@ -21,7 +21,7 @@ int dfs(int i,int j,vector<vector<int>>& grid)
     }
     
     vis[i][j]=1;
-return dfs(i-1,j,grid)+dfs(i+1,j,grid)+dfs(i,j-1,grid)+dfs(i,j+1,grid); 
+    return dfs(i-1,j,grid)+dfs(i+1,j,grid)+dfs(i,j-1,grid)+dfs(i,j+1,grid); 
 }
 
     int islandPerimeter(vector<vector<int>>& grid) {
