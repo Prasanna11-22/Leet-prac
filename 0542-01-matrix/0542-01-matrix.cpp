@@ -28,7 +28,7 @@ public:
             int nc=k[1]+j;
 
             if(nr<0||nr>=r||nc<0||nc>=c) continue;
-            //cout<<nr<<" "<<nc<<endl;
+            
             if(mat[nr][nc]==1&&!vis[nr][nc])
             {
                 vis[nr][nc]=true;
