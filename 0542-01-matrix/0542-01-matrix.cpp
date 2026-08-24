@@ -29,7 +29,7 @@ public:
 
             if(nr<0||nr>=r||nc<0||nc>=c) continue;
             
-            if(mat[nr][nc]==1&&!vis[nr][nc])
+            if(!vis[nr][nc])
             {
                 vis[nr][nc]=true;
                 mat[nr][nc]=mat[i][j]+1;
