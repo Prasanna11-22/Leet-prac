@@ -38,17 +38,6 @@ public:
         }
         q.pop();
     }
-
-    // for(int i=0;i<r;i++)
-    // {
-    //     for(int j=0;j<c;j++)
-    //     {
-    //         if(mat[i][j]==1&&!vis[i][j])
-    //         {
-    //             mat[i][j]=2;
-    //         }
-    //     }
-    // }
     return mat;
     }
 };
