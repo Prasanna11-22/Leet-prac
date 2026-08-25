@@ -22,8 +22,6 @@ public:
             k--;
         }
         
-        cout<<k<<endl;
-
       auto pos =st.find_first_not_of('0');
       if(pos==string::npos) return "0";
       else
