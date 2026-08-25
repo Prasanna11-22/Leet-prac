@@ -9,17 +9,13 @@ public:
    bool chk=true;
      while(chk)
      {
+        t=k*n;
         if(mp.find(t)==mp.end())
         {
             return t;
         }
-        else
-        {
-            n++;
-            t=k*n;
+            n++;  
         }
-
-     }
      
    return 0;
 
