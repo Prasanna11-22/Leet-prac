@@ -28,7 +28,6 @@ public:
                     {
                         ans = s.substr(l, r - l + 1);
                     }
-                    cout << ans << endl;
                     minlen = r - l + 1;
                 }
             }
