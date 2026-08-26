@@ -17,13 +17,12 @@ public:
         ListNode t(0,head);
          auto temp=&t;
 
-       while(temp->next)
+       while(temp&&temp->next)
        {
-        if(s.find(temp->next->val)!=s.end())
+        while((temp->next)&&s.find(temp->next->val)!=s.end())
         {
             temp->next=temp->next->next;
         }
-        else
           temp=temp->next;
        }
 
