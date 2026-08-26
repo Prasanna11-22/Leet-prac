@@ -14,23 +14,19 @@ public:
        if(!head) return nullptr;
        
         set<int> s(nums.begin(),nums.end());
-        ListNode* t=new ListNode(0,head);
-        ListNode* prev=t;
-        ListNode* temp=t->next;
+        ListNode t(0,head);
+         auto temp=&t;
 
-       while(temp)
+       while(temp->next)
        {
-        if(s.find(temp->val)!=s.end())
+        if(s.find(temp->next->val)!=s.end())
         {
-            prev->next=temp->next;
-
-            if((temp->next)&&(s.find(temp->val)==s.end()))
-            prev=temp->next;
+            temp->next=temp->next->next;
         }
-        else prev=temp;
-        temp=temp->next;
+        else
+          temp=temp->next;
        }
 
-        return t->next;
+        return t.next;
     }
 };
