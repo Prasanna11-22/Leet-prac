@@ -13,7 +13,6 @@ public:
 
         node->val=nxtnode->val;
         node->next=nxtnode->next;
-        delete nxtnode;
         
     }
 };
