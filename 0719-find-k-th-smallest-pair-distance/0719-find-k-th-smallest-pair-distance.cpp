@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int isposs(vector<int>& nums,int diff,int k)
+    bool isposs(vector<int>& nums,int diff,int k)
     {
         int l=0,pair=0;
 
@@ -12,26 +12,25 @@ public:
             }
             pair+=(r-l);
         }
-        
-
-        return pair;
+    
+        return pair>=k;
     }
     int smallestDistancePair(vector<int>& nums, int k) {
         sort(nums.begin(),nums.end());
         int l=0,r=nums[nums.size()-1]-nums[0],ans=r;
 
 
-        while(l<r)
+        while(l<=r)
         {
             int mid=l+(r-l)/2;
-            if(isposs(nums,mid,k)<k)
+            if(isposs(nums,mid,k))
             {
                 ans=mid;
-                 l=mid+1;
+                r=mid-1;
             }
             else
             {
-                r=mid;
+                 l=mid+1;
             }
 
         }
