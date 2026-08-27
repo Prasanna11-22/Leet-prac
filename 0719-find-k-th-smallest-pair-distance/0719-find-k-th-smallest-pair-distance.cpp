@@ -17,7 +17,7 @@ public:
     }
     int smallestDistancePair(vector<int>& nums, int k) {
         sort(nums.begin(),nums.end());
-        int l=0,r=nums[nums.size()-1]-nums[0],ans=r;
+        int l=0,r=nums.back()-nums.front(),ans=r;
 
 
         while(l<=r)
