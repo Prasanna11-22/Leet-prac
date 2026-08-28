@@ -45,10 +45,7 @@ bool dfs(int n ,vector<vector<int>>& graph)
             {
                 dfs(i,graph);
             }
-        }
 
-        for(int i=0;i<V;i++)
-        { 
             if(chk[i]==true)
             {
                 res.push_back(i);
