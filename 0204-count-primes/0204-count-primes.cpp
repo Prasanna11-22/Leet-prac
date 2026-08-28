@@ -3,7 +3,7 @@ public:
     int countPrimes(int n) {
         if (n <= 2) return 0;
 
-        int isPrime[n];
+        bool isPrime[n];
         memset(isPrime,1,sizeof(isPrime));
         isPrime[0] = isPrime[1] = 0;
         int count = n-2;
