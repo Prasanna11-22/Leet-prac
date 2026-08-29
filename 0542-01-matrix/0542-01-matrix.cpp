@@ -29,11 +29,11 @@ public:
 
             if(nr<0||nr>=r||nc<0||nc>=c) continue;
             
-            if(!vis[nr][nc])
+            if(!vis[nr][nc]&&mat[nr][nc]==1)
             {
                 vis[nr][nc]=true;
                 mat[nr][nc]=mat[i][j]+1;
-               q.push(mp(nr,nc));
+                q.push(mp(nr,nc));
             }
         }
         q.pop();
