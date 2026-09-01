@@ -18,7 +18,12 @@ vector<int> dy={0,0,1,-1};
         while(!q.empty())
         {
             auto [x,y,cnt]=q.front();
+            cout<<x<<y<<cnt<<endl;
             q.pop();
+            if((x==r-1||y==c-1||x==0||y==0)&&(ent[0]!=x||ent[1]!=y))
+            {
+                return cnt;
+            }
 
             for(int i=0;i<4;i++)
             {
@@ -28,11 +33,6 @@ vector<int> dy={0,0,1,-1};
                 {
                     vis[nr][nc]=true;
                     q.push({nr,nc,cnt+1});
-
-                 if((nr==r-1||nc==c-1||nr==0||nc==0))
-                {
-                    return cnt+1;
-                 }
                 }
             }
         }
