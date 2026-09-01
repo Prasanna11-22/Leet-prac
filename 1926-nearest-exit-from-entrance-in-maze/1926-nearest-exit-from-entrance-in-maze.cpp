@@ -18,7 +18,6 @@ vector<int> dy={0,0,1,-1};
         while(!q.empty())
         {
             auto [x,y,cnt]=q.front();
-            cout<<x<<y<<cnt<<endl;
             q.pop();
             if((x==r-1||y==c-1||x==0||y==0)&&(ent[0]!=x||ent[1]!=y))
             {
