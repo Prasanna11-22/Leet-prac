@@ -6,7 +6,7 @@ public:
         
         int l=0,r=h.size()-1;
 
-        while(l<=r)
+        while(l<r)
         {
             lmax=max(lmax,h[l]);
             rmax=max(rmax,h[r]);
