@@ -21,7 +21,6 @@ auto cmp=[](const pair<int,string>&a,const pair<int,string>&b)
 };
     priority_queue<pair<int,string>,vector<pair<int,string>>,decltype(cmp)>pq;
 
-    vector<string> res;
 
     for(auto i : mp)
     {
@@ -31,14 +30,15 @@ auto cmp=[](const pair<int,string>&a,const pair<int,string>&b)
             pq.pop();
         }
     }
+    vector<string> res(k,"");
 
     while(!pq.empty())
     {
-        res.push_back(pq.top().second);
+        res[k-1]=(pq.top().second);
         pq.pop();
+        k--;
     }
-
-    reverse(res.begin(),res.end());
+    
     return res;  
         
     }
