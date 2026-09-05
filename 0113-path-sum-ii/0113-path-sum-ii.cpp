@@ -22,15 +22,15 @@ bool isleaf(TreeNode* node)
 void rec(TreeNode* root,int& tsum,int sum,vector<int>&ans)
 {
     if(!root) return;
-    //if(sum>tsum) return;
     sum+=root->val;
-   //cout<<sum<<endl;
 
     ans.push_back(root->val);
 
     if(isleaf(root)&&(tsum==sum))
     {
         res.push_back(ans);
+        ans.pop_back();
+        return;
     }
 
     rec(root->left,tsum,sum,ans);
